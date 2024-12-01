@@ -1,62 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Projeto de Aplicação Web com Laravel e Redis
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descrição
 
-## About Laravel
+Este projeto é uma aplicação web desenvolvida com o framework Laravel e utiliza o Redis como sistema de armazenamento de dados em cache. O objetivo do projeto é demonstrar como utilizar o Redis para melhorar a performance da aplicação e reduzir a carga no banco de dados MySQL.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Funcionalidades
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Utilização do Redis como sistema de armazenamento de dados em cache
+* Implementação de cache para reduzir a carga no banco de dados
+* Utilização do Laravel como framework para desenvolvimento da aplicação
+* Implementação de rotas e controladores para gerenciar as requisições e respostas da aplicação
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Configuração do Redis
 
-## Learning Laravel
+* O Redis é configurado no arquivo `config/database.php` como um sistema de armazenamento de dados em cache
+* A conexão com o Redis é estabelecida utilizando o driver `predis`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Utilização do Cache
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* O cache é utilizado para armazenar os resultados das consultas ao banco de dados
+* O cache é configurado para expirar após um período de tempo definido
 
-## Laravel Sponsors
+## Rotas e Controladores
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* As rotas são definidas no arquivo `routes/web.php` e são utilizadas para gerenciar as requisições e respostas da aplicação
+* Os controladores são utilizados para processar as requisições e retornar as respostas
 
-### Premium Partners
+## Modelos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+* Os modelos são utilizados para representar as tabelas do banco de dados
+* Os modelos são definidos no diretório `app/Models`
 
-## Contributing
+## Exemplos de Uso
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* A rota `/noticia` é utilizada para exibir as notícias armazenadas no cache
 
-## Code of Conduct
+## Requisitos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* PHP 7.4 ou superior
+* Laravel 8.x ou superior
+* MySQL 8.x ou superior
+* Redis 6.x ou superior
 
-## Security Vulnerabilities
+## Instalação
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Clone o repositório do projeto
+2. Execute o comando `composer install` para instalar as dependências
+3. Configure o arquivo `env` com as informações de conexão com o banco de dados e o Redis
+4. Execute o comando `php artisan migrate` para criar as tabelas do banco de dados
+5. Execute o comando `php artisan cache:clear` para limpar o cache
 
-## License
+## Contribuição
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Contribuições são bem-vindas!
+* Por favor, abra uma issue para discutir as mudanças antes de fazer um pull request.
